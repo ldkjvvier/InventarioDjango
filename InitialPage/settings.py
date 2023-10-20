@@ -60,7 +60,7 @@ ROOT_URLCONF = "InitialPage.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR,'templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -81,10 +81,10 @@ WSGI_APPLICATION = "InitialPage.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": 'inventario',    
-        'USER': 'root',
-        'PASSWORD': '',
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": 'db.sqlite3',  
+          
+
     }
 }
 
