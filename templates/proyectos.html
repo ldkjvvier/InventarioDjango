@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+
+{% block header%}
+
+<h1 class="text-7xl text-center text-cyan-900" >
+    LISTADO DE PROYECTOS
+</h1>    
+
+{% endblock %}
+
+
+{% block content%}
+    <div class="w-full flex justify-between">
+        <button class="border bg-red-500 p-3 rounded hover:bg-red-600 transition-all text-xlx text-white font-bold">
+            <a href="{% url 'home' %}">
+                VOLVER
+            </a>
+        </button>
+
+        <button class="border bg-cyan-500 p-3 rounded hover:bg-cyan-600 transition-all text-xlx font-bold ">
+            <a href="{% url 'proyectos' %}">
+                AGREGAR PROYECTOS
+            </a>
+        </button>
+    </div>
+{% endblock %}

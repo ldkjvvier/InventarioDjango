@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <p>
-        Hola mundo 
-    </p>
-  </body>
-</html>
+{% extends "base.html" %}
+
+
+{% block header%}
+
+    <h1 class="text-7xl text-center text-cyan-900" >
+        SISTEMA ADMINSTRADOR
+    </h1>    
+
+{% endblock %}
+
+
+{% block content%}
+    <button class="border bg-cyan-500 p-3 rounded hover:bg-cyan-600 transition-all text-xlx font-bold">
+        <a href="{% url 'proyectos' %}">
+            Proyectos
+        </a>
+    </button>
+{% endblock %}
