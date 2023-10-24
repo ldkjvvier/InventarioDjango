@@ -1,0 +1,32 @@
+
+{% extends "base.html" %}
+
+
+
+{% block header%}
+
+<h1 class="text-7xl text-center text-cyan-900" >
+    AGREGAR PROYECTOS
+</h1>    
+
+{% endblock %}
+
+
+{% block content%}
+    <div class="w-full flex justify-between">
+        <button class="border bg-red-500 p-3 rounded hover:bg-red-600 transition-all text-xlx text-white font-bold">
+            <a href="{% url 'home' %}">
+                VOLVER
+            </a>
+        </button>
+    </div>
+
+    <form method="POST">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input
+            type="submit"
+            value="Guardar"
+            class="border bg-green-500 p-3 rounded hover:bg-green-600 transition-all text-xlx text-white font-bold">
+    </form>
+{% endblock %}

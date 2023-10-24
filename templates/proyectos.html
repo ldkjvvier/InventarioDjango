@@ -12,6 +12,8 @@
 
 
 {% block content%}
+
+
     <div class="w-full flex justify-between">
         <button class="border bg-red-500 p-3 rounded hover:bg-red-600 transition-all text-xlx text-white font-bold">
             <a href="{% url 'home' %}">
@@ -20,9 +22,56 @@
         </button>
 
         <button class="border bg-cyan-500 p-3 rounded hover:bg-cyan-600 transition-all text-xlx font-bold ">
-            <a href="{% url 'proyectos' %}">
+            <a href="{% url 'agregar' %}">
                 AGREGAR PROYECTOS
             </a>
         </button>
     </div>
+    {% if proyecto %}
+
+    <table>
+        <thead>
+            <tr>
+                <th class="border border-gray-400 px-4 py-2">NOMBRE</th>
+                <th class="border border-gray-400 px-4 py-2">Fecha Inicio</th>
+                <th class="border border-gray-400 px-4 py-2">Fecha Termino</th>
+                <th class="border border-gray-400 px-4 py-2">Responsable</th>
+                <th class="border border-gray-400 px-4 py-2">Prioridad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for proyecto in proyectos %}
+            <tr>
+                <td class="border border-gray-400 px-4 py-2">{{ proyecto.nombre }}</td>
+                <td class="border border-gray-400 px-4 py-2">{{ proyecto.fechaInicio }}</td>
+                <td class="border border-gray-400 px-4 py-2">{{ proyecto.fechaTermino }}</td>
+                <td class="border border-gray-400 px-4 py-2">{{ proyecto.responsable }}</td>
+                <td class="border border-gray-400 px-4 py-2">{{ proyecto.prioridad }}</td>
+                <td class="border border-gray-400 px-4 py-2">
+                    <button class="border bg-green-500 p-3 rounded hover:bg-green-600 transition-all text-xlx font-bold ">
+                        <a href="{% url 'editar' proyecto.id %}">
+                            EDITAR
+                        </a>
+                    </button>
+                    <button class="border bg-red-500 p-3 rounded hover:bg-red-600 transition-all text-xlx text-white font-bold">
+                        <a href="{% url 'eliminar' proyecto.id %}">
+                            ELIMINAR
+                        </a>
+                    </button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+    {% else %}
+
+        <p class="text-2xl text-center text-red-500">
+            NO HAY PROYECTOS
+        </p>
+
+    {% endif %}
+
+
 {% endblock %}
