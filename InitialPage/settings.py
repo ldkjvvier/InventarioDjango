@@ -84,7 +84,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": 'Inventario',    
         "USER": 'root',
-        "PASSWORD": '',
+        "PASSWORD": '@Jvvier231220',
 
 
     }
